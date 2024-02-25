@@ -1,0 +1,76 @@
+<<<<<<< HEAD
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <title>v-if</title>
+</head>
+<body>
+    <div id="app">
+    <!-- if -->
+    <h1 v-if="stockcount>3">The products are in stock</h1>
+    <!-- else-if-->
+    <h2 v-else-if="stockcount<3">Only few stocks are left</h2>
+    <!-- else -->
+    <h2 v-else>The products are out of stock</h2>
+
+</div>
+    <script>
+        const app=Vue.createApp({
+            data(){
+                return {
+                   stockcount: 2
+                }
+            }
+        })
+        app.mount('#app')
+    </script>
+</body>
+</html>
+=======
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <style>
+        .div1{
+            background-color: yellow;
+            color: red;
+            font-size: 25px;
+            font-style: oblique;
+            width:450px;
+        }
+        #h2id{
+            color: green;
+            font-size: 30px;
+        }
+    </style>
+    <title>v-if</title>
+</head>
+<body>
+    <div id="app">
+    <!-- if -->
+    <h1 v-if="stockcount>3">The products are in stock</h1>
+    <!-- else-if-->
+    <h2 v-else-if="stockcount<3">Only few stocks are left</h2>
+    <!-- else -->
+    <h2 v-else>The products are out of stock</h2>
+
+</div>
+    <script>
+        const app=Vue.createApp({
+            data(){
+                return {
+                   stockcount: 2
+                }
+            }
+        })
+        app.mount('#app')
+    </script>
+</body>
+</html>
+>>>>>>> d41a663 (Added the form)

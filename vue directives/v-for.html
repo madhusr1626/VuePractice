@@ -1,0 +1,125 @@
+<<<<<<< HEAD
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <style>
+    #app > div {
+        border: solid black 1px;
+        width: 100%;
+        padding: 10px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+      }
+  
+      figure {
+        width: 80px;
+        padding: 10px;
+        margin: 10px;
+        background-color: lightskyblue;
+        border-radius: 5px;
+      }
+  
+      figcaption {
+        text-align: center;
+      }
+      
+      img {
+        width: 100%;
+      }
+    </style>
+    <title>v-for</title>
+</head>
+
+<body>
+    <div id="app">
+        <figure v-for=" x in foods">
+            <img v-bind:src="x.url" v-bind:alt="x.url">
+            <figcaption >{{x.name}}</figcaption>
+        </figure>
+    </div>
+    <script>
+        const app = Vue.createApp({
+            data() {
+                return {
+                    foods: [
+                        { name: 'Dose', url: 'images/dose.jpg' },
+                        { name: 'panner curry', url: 'images/paneer curry.jpg' },
+                        { name: 'Full meals', url: 'images/full meals.jpg' },
+                    ]
+
+                }
+            }
+        })
+        app.mount('#app')
+    </script>
+</body>
+
+</html>
+=======
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <style>
+    #app > div {
+        border: solid black 1px;
+        width: 100%;
+        padding: 10px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+      }
+  
+      figure {
+        width: 80px;
+        padding: 10px;
+        margin: 10px;
+        background-color: lightskyblue;
+        border-radius: 5px;
+      }
+  
+      figcaption {
+        text-align: center;
+      }
+      
+      img {
+        width: 100%;
+      }
+    </style>
+    <title>v-for</title>
+</head>
+
+<body>
+    <div id="app">
+        <figure v-for=" x in foods">
+            <img v-bind:src="x.url" v-bind:alt="x.url">
+            <figcaption >{{x.name}}</figcaption>
+        </figure>
+    </div>
+    <script>
+        const app = Vue.createApp({
+            data() {
+                return {
+                    foods: [
+                        { name: 'Dose', url: 'images/dose.jpg' },
+                        { name: 'panner curry', url: 'images/paneer curry.jpg' },
+                        { name: 'Full meals', url: 'images/full meals.jpg' },
+                    ]
+
+                }
+            }
+        })
+        app.mount('#app')
+    </script>
+</body>
+
+</html>
+>>>>>>> d41a663 (Added the form)

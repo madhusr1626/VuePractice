@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <link rel="stylesheet" href="../resources/css/style.css">
+    <title>First Form</title>
+</head>
+
+<body>
+    <div id="app" class="container">
+        <form v-on:submit.prevent="addItem">
+            <h3>Form</h3>
+            <label><b>Item</b></label>
+            <input type="text" placeholder="Enter the Item name" v-model="itemName" required>
+
+            <label><b>How many you want?</b></label>
+            <input type="number" placeholder="Enter the quantity" v-model="itemNumber" required>
+
+            <button type="submit">Add Item</button>
+        </form>
+        <div class="item-list">
+            <h2>Item list</h2>
+            <ol>
+                <li v-for="item in shoppingList"> {{item.name}}, {{item.number}}</li>
+            </ol>
+        </div>
+    </div>
+    <script>
+        const app = Vue.createApp({
+            data() {
+                return {
+                    itemName: null,
+                    itemNumber: null,
+                    shoppingList: [
+                        
+                    ]
+
+                }
+            },
+
+            methods: {
+                addItem() {
+                    let item = {
+                        name: this.itemName,
+                        number: this.itemNumber
+                    }
+                    this.shoppingList.push(item)
+                    this.itemName = null;
+                    this.itemNumber = null;
+                }
+            }
+        })
+        app.mount('#app');
+    </script>
+
+</body>
+
+</html>

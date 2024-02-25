@@ -1,0 +1,109 @@
+<<<<<<< HEAD
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <style>
+        .div1{
+            background-color: yellow;
+            color: red;
+            font-size: 25px;
+            font-style: oblique;
+            width:450px;
+        }
+        #h2id{
+            color: green;
+            font-size: 30px;
+        }
+    </style>
+    <title>v-bind</title>
+</head>
+<body>
+    <div id="app">
+    <!-- class binding -->
+    <h1 v-bind:class="vueClass">This element is bound to the "div1" class</h1>
+    <!-- id binding -->
+    <h2 v-bind:id="vueid">This element is bound to the "div1" class</h2>
+    <!-- img binding -->
+    <img v-bind:src="imgurl" alt="hello">
+    <!-- css binding -->
+    <p v-bind:style="{fontSize: size, color: c }"> The css sbinding</p>
+    <!-- ternary operator binding -->
+    <p v-bind:style="{backgroundColor : isImportant ? 'green': 'red', color: c}">Hello</p>
+    <!--Short hand property for v-bind-->
+    <p :id="vueid">The short hand property</p>
+</div>
+    <script>
+        const app=Vue.createApp({
+            data(){
+                return {
+                    vueClass: "div1",
+                    vueid: "h2id",
+                    imgurl:"https://www.kasandbox.org/programming-images/avatars/marcimus-orange.png",
+                    size: '30px',
+                    c: 'red',
+                    isImportant: true,
+                }
+            }
+        })
+        app.mount('#app')
+    </script>
+</body>
+</html>
+=======
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <style>
+        .div1{
+            background-color: yellow;
+            color: red;
+            font-size: 25px;
+            font-style: oblique;
+            width:450px;
+        }
+        #h2id{
+            color: green;
+            font-size: 30px;
+        }
+    </style>
+    <title>v-bind</title>
+</head>
+<body>
+    <div id="app">
+    <!-- class binding -->
+    <h1 v-bind:class="vueClass">This element is bound to the "div1" class</h1>
+    <!-- id binding -->
+    <h2 v-bind:id="vueid">This element is bound to the "div1" class</h2>
+    <!-- img binding -->
+    <img v-bind:src="imgurl" alt="hello">
+    <!-- css binding -->
+    <p v-bind:style="{fontSize: size, color: c }"> The css sbinding</p>
+    <!-- ternary operator binding -->
+    <p v-bind:style="{backgroundColor : isImportant ? 'green': 'red', color: c}">Hello</p>
+    <!--Short hand property for v-bind-->
+    <p :id="vueid">The short hand property</p>
+</div>
+    <script>
+        const app=Vue.createApp({
+            data(){
+                return {
+                    vueClass: "div1",
+                    vueid: "h2id",
+                    imgurl:"https://www.kasandbox.org/programming-images/avatars/marcimus-orange.png",
+                    size: '30px',
+                    c: 'red',
+                    isImportant: true,
+                }
+            }
+        })
+        app.mount('#app')
+    </script>
+</body>
+</html>
+>>>>>>> d41a663 (Added the form)

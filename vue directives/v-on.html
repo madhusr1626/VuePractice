@@ -1,0 +1,161 @@
+<<<<<<< HEAD
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <style>
+        #app > div {
+            border: solid black 1px;
+            width: 100%;
+            padding: 10px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+          }
+      
+          figure {
+            width: 80px;
+            padding: 10px;
+            margin: 10px;
+            background-color: lightskyblue;
+            border-radius: 5px;
+          }
+      
+          figcaption {
+            text-align: center;
+          }
+          
+          img {
+            width: 100%;
+          }
+        </style>
+    <title>v-on</title>
+</head>
+<body>
+    <div id="app">
+        <!-- v-on:click -->
+        <button v-on:click="clickCount++">Click here</button>
+        <p>{{ 'Button clicked: ' + clickCount }}</p>
+        <hr>
+        <!-- v-on:input -->
+        <input v-on:input="inpCount++">
+        <p>{{ 'Input count: ' + inpCount }}</p>
+        <hr>
+        <!-- v-on in a v-for Loop -->
+        <figure v-for=" x in foods">
+            <a v-on:click="openImage(x.url)">
+            <img v-bind:src="x.url" v-bind:alt="x.url" >
+            <figcaption >{{x.name}}</figcaption>
+            </a>
+        </figure>
+
+      </div>
+
+</div>
+    <script>
+        const app=Vue.createApp({
+            data(){
+                return {
+                   clickCount:0,
+                   inpCount:0,
+                   foods: [
+                        { name: 'Dose', url: 'images/dose.jpg' },
+                        { name: 'panner curry', url: 'images/paneer curry.jpg' },
+                        { name: 'Full meals', url: 'images/full meals.jpg' },
+                    ]
+
+                }
+            },
+            methods: {
+                openImage(url){
+                    window.open(url)
+                }            
+            }
+        })
+        app.mount('#app')
+    </script>
+</body>
+</html>
+=======
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <style>
+        #app > div {
+            border: solid black 1px;
+            width: 100%;
+            padding: 10px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+          }
+      
+          figure {
+            width: 80px;
+            padding: 10px;
+            margin: 10px;
+            background-color: lightskyblue;
+            border-radius: 5px;
+          }
+      
+          figcaption {
+            text-align: center;
+          }
+          
+          img {
+            width: 100%;
+          }
+        </style>
+    <title>v-on</title>
+</head>
+<body>
+    <div id="app">
+        <!-- v-on:click -->
+        <button v-on:click="clickCount++">Click here</button>
+        <p>{{ 'Button clicked: ' + clickCount }}</p>
+        <hr>
+        <!-- v-on:input -->
+        <input v-on:input="inpCount++">
+        <p>{{ 'Input count: ' + inpCount }}</p>
+        <hr>
+        <!-- v-on in a v-for Loop -->
+        <figure v-for=" x in foods">
+            <a v-on:click="openImage(x.url)">
+            <img v-bind:src="x.url" v-bind:alt="x.url" >
+            <figcaption >{{x.name}}</figcaption>
+            </a>
+        </figure>
+
+      </div>
+
+</div>
+    <script>
+        const app=Vue.createApp({
+            data(){
+                return {
+                   clickCount:0,
+                   inpCount:0,
+                   foods: [
+                        { name: 'Dose', url: 'images/dose.jpg' },
+                        { name: 'panner curry', url: 'images/paneer curry.jpg' },
+                        { name: 'Full meals', url: 'images/full meals.jpg' },
+                    ]
+
+                }
+            },
+            methods: {
+                openImage(url){
+                    window.open(url)
+                }            
+            }
+        })
+        app.mount('#app')
+    </script>
+</body>
+</html>
+>>>>>>> d41a663 (Added the form)
