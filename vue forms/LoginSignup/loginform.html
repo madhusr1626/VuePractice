@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <link rel="stylesheet" href="../../resources/css/style.css">
+    <title>Login Form</title>
+</head>
+
+<body>
+    <div id="app" class="container">
+        <form v-on:submit.prevent="submitForm">
+            <h3>Form</h3>
+            <label><b>Email</b></label>
+            <input type="email" name="email" placeholder="Enter the Email" v-model="userEmail" required>
+
+            <label><b>Password</b></label>
+            <input type="password" name="password" placeholder="Enter the Password" v-model="userPassword" required>
+
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+    <script>
+        const app = Vue.createApp({
+            data() {
+                return {
+                    userEmail: '',
+                    userPassword: ''
+
+                }
+            },
+
+            methods: {
+                submitForm() {
+
+                    const data = new URLSearchParams();
+                    data.append('email', this.userEmail);
+                    data.append('password', this.userPassword);
+                    fetch('Master.php?f=login', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/x-www-form-urlencoded',
+                        },
+                        body: data,
+                    })
+                        .then(response => {
+                            if (!response.ok) {
+                                throw new Error('Network response was not ok');
+                            }
+                            return response.json();
+                        })
+                        .then(data => {
+                            if (data.status === 'success') {
+                                console.log(data.status);
+                                location.href = "success.html";
+                            } else {
+                                location.href = "failure.html";
+                            }
+                        })
+                        .catch(error => {
+                            console.log('error');
+
+                        });
+                }
+            }
+        })
+        app.mount('#app');
+    </script>
+
+</body>
+
+</html>

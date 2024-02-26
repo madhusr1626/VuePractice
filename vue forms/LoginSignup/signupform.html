@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <link rel="stylesheet" href="../../resources/css/style.css">
+    <title>Sign up Form</title>
+</head>
+
+<body>
+    <div id="app" class="container">
+        <form v-on:submit.prevent="submitForm">
+            <h3>Sign up Form</h3>
+            <label><b>Name</b></label>
+            <input type="text" placeholder="Enter Your name" v-model="Name" required>
+
+            <label><b>Email</b></label>
+            <input type="email" placeholder="Enter the Email" v-model="userEmail" required>
+
+            <label><b>Password</b></label>
+            <input type="password" placeholder="Enter the Password" v-model="userPassword" required>
+
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+    <script>
+        const app = Vue.createApp({
+            data() {
+                return {
+                    Name: '',
+                    userEmail: '',
+                    userPassword: ''
+
+                }
+            },
+
+            methods: {
+                submitForm() {
+
+                    const data = {
+                        name: this.Name,
+                        email: this.userEmail,
+                        password: this.userPassword
+                    };
+                    fetch('Master.php?f=login', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                        },
+                        body: JSON.stringify(data),
+                    })
+                        .then(response => {
+                            if (!response.ok) {
+                                throw new Error('Network response was not ok');
+                            }
+                            return response.json();
+                        })
+                        .then(data => {
+                            location.href = "success.html"
+                        })
+                        .catch(error => {
+                            console.log(error);
+
+                        });
+                }
+            }
+        })
+        app.mount('#app');
+    </script>
+
+</body>
+
+</html>
